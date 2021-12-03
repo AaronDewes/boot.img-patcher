@@ -3,11 +3,8 @@
 # cd into the dir which contains this file
 cd "$(dirname "${BASH_SOURCE}")"
 
-# Download https://download.pageplace.de/ereader/15.2.0/OS44/update.zip to work/update.zip
-# Unzip work/update.zip to work/update
-# If update.ip doesn't already exist in work
 mkdir -p work
-echo "Downloading update..."
+echo "Downloading update.zip from Tolino servers..."
 if [ ! -f work/update.zip ]; then
   # Download https://download.pageplace.de/ereader/15.2.0/OS44/update.zip to work/update.zip
   curl -L -o work/update.zip https://download.pageplace.de/ereader/15.2.0/OS44/update.zip
@@ -17,13 +14,13 @@ rm -rf work/update work/boot-15.2.0
 
 # Extract only the boot.img from the update.zip
 echo "Extracting boot.img from update.zip..."
-unzip -j work/update.zip boot.img -d work/update
+unzip -j work/update.zip boot.img -d work/update > /dev/null
 echo "Extracting ramdisk from boot.img..."
 ./unpack_bootimg.py --boot_img work/update/boot.img --out work/boot-15.2.0 > /dev/null
 echo "Unpacking ramdisk..."
 mkdir work/boot-15.2.0/ramdisk-unpacked
 cd work/boot-15.2.0/ramdisk-unpacked
-gunzip -c ../ramdisk | cpio -i
+gunzip -c ../ramdisk | cpio -i > /dev/null 2> /dev/null
 
 echo "Hacking ramdisk to enable adb..."
 # Put new, multiline content into default.prop
@@ -45,7 +42,7 @@ cp -f "../../../patched/adbd" sbin/adbd
 chmod +x sbin/adbd
 
 echo "Repacking ramdisk..."
-find . | cpio -o -H newc | gzip > ../repack-ramdisk
+find . | cpio -o -H newc  2> /dev/null | gzip > ../repack-ramdisk
 cd ..
 rm -rf ramdisk ramdisk-unpacked
 mv repack-ramdisk ramdisk
@@ -58,7 +55,7 @@ cd ..
   --board ntx_6sl\
   --kernel_offset 0x70808000 --ramdisk_offset 0x71800000\
   --second_offset 0x71700000 --tags_offset 0x70800100\
-  -o work/boot-15.2.0-patched.img
+  -o work/boot-15.2.0-patched.img > /dev/null
 
 # Now, wait for the user to press enter
 echo
