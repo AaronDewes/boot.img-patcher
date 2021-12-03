@@ -65,4 +65,16 @@ echo
 echo "Preparations done!"
 echo "Please now boot your tolino into recovery mode by holding the power button until the screen refreshes and shows the Tolino logo."
 echo "This can take up to 1 minute."
+# Measure the time fastboot boot work-v6/boot-15.2.0-patched.img takes
+# Start the timer
+start=$(date +%s)
+# Boot the patched boot.img
 fastboot boot work/boot-15.2.0-patched.img
+# Stop the timer
+end=$(date +%s)
+# Calculate the difference
+diff=$(( $end - $start ))
+# Print the time
+echo "It took $diff seconds to boot the patched boot.img."
+echo
+
