@@ -1,0 +1,16 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.secure=0
+security.perf_harden=0
+ro.adb.secure=0
+ro.allow.mock.location=0
+ro.debuggable=1
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Wed Nov 24 16:34:36 UTC 2021
+ro.bootimage.build.date.utc=1637771676
+ro.bootimage.build.fingerprint=RakutenKobo/E70P14_android/E70P14_android:8.1.0/8af4a07/20211124-163439:user/release-keys
+persist.sys.usb.config=none
+
