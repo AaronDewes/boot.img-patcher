@@ -63,6 +63,6 @@ cd ..
 # Now, wait for the user to press enter
 echo
 echo "Preparations done!"
-echo "Please now boot your tolino into recovery mode and then press enter"
-read
+echo "Please now boot your tolino into recovery mode by holding the power button until the screen refreshes and shows the Tolino logo."
+echo "This can take up to 1 minute."
 fastboot boot work/boot-15.2.0-patched.img
