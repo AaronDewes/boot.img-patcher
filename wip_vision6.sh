@@ -46,7 +46,7 @@ cd ..
   --second_offset 0x30f00000 --tags_offset 0x30000100\
   --os_patch_level 268697895\
   -o work-v6/boot-15.2.0-patched.img
-exit 1
+
 # Now, wait for the user to press enter
 echo
 echo "Preparations done!"
