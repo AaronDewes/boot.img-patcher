@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Copyright 2018, The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,27 +12,31 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""unpacks the bootimage.
-Extracts the kernel, ramdisk, second bootloader, dtb and recovery dtbo images.
-"""
-from __future__ import print_function
+
+# If the Python version isn't 3.9 or greater, print an error and exit.
+import sys
 from argparse import ArgumentParser, FileType
 from struct import unpack
 import os
+
+if sys.version_info < (3, 9):
+    print('This script requires Python 3.9 or greater.')
+    sys.exit(1)
+
 def create_out_dir(dir_path):
-    """creates a directory 'dir_path' if it does not exist"""
+    # creates a directory 'dir_path' if it does not exist
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
 def extract_image(offset, size, bootimage, extracted_image_name):
-    """extracts an image from the bootimage"""
+    # extracts an image from the bootimage
     bootimage.seek(offset)
     with open(extracted_image_name, 'wb') as file_out:
         file_out.write(bootimage.read(size))
 def get_number_of_pages(image_size, page_size):
-    """calculates the number of pages required for the image"""
+    # calculates the number of pages required for the image
     return (image_size + page_size - 1) / page_size
 def unpack_bootimage(args):
-    """extracts kernel, ramdisk, second bootloader and recovery dtbo"""
+    # extracts kernel, ramdisk, second bootloader and recovery dtbo
     boot_magic = unpack('8s', args.boot_img.read(8))
     print('boot_magic: %s' % boot_magic)
     kernel_ramdisk_second_info = unpack('10I', args.boot_img.read(10 * 4))
@@ -103,7 +107,7 @@ def unpack_bootimage(args):
         extract_image(image_info[0], image_info[1], args.boot_img,
                       os.path.join(args.out, image_info[2]))
 def parse_cmdline():
-    """parse command line arguments"""
+    # parse command line arguments
     parser = ArgumentParser(
         description='Unpacks boot.img/recovery.img, extracts the kernel,'
         'ramdisk, second bootloader, recovery dtbo and dtb')
@@ -115,7 +119,7 @@ def parse_cmdline():
     parser.add_argument('--out', help='path to out binaries', default='out')
     return parser.parse_args()
 def main():
-    """parse arguments and unpack boot image"""
+    # parse arguments and unpack boot image
     args = parse_cmdline()
     create_out_dir(args.out)
     unpack_bootimage(args)
