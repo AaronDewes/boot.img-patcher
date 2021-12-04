@@ -11,6 +11,8 @@ This tool allows you to enable adb, root access and the developer options on you
 ### Included scripts
 
 `boot_adb_mode.sh`: This boots your Tolino into a rooted mode with adb enabled. From this mode, you can, until a reboot, apply modifications to the OS. The modifications you apply will be kept, adb and root access won't.
+
+
 `enable_dev_options.sh` This will permanently enable the developer options on your Tolino. This only works while the Tolino is in adb mode (via `boot_adb_mode.sh`). To access the developer options, press the search icon on the tolino homepage.
 
 ### Other things
