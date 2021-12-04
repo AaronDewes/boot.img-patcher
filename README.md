@@ -1,3 +1,10 @@
+I'm not responsible for any damage to your devices by running this tool.
+
+Please note that you may loose warranty when using this, although (This is not legal advice and I'm not a lawyer) you won't always loose it in the EU:
+https://netzpolitik.org/2012/garantieanspruch-auch-nach-rooten-und-flashen-von-geraten/
+
+---
+
 # Tolino hacking
 
 A tool to hack Tolino ebook readers.
