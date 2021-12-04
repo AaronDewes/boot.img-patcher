@@ -16,7 +16,7 @@ rm -rf work/update work/boot-15.2.0
 echo "Extracting boot.img from update.zip..."
 unzip -j work/update.zip boot.img -d work/update > /dev/null
 echo "Extracting ramdisk from boot.img..."
-./unpack_bootimg.py --boot_img work/update/boot.img --out work/boot-15.2.0 #> /dev/null
+./unpack_bootimg.py --boot_img work/update/boot.img --out work/boot-15.2.0 > /dev/null
 echo "Unpacking ramdisk..."
 mkdir work/boot-15.2.0/ramdisk-unpacked
 cd work/boot-15.2.0/ramdisk-unpacked
