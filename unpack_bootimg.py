@@ -104,7 +104,7 @@ def unpack_bootimage(args):
         )
         image_info_list.append((dtb_offset, dtb_size, 'dtb'))
     for image_info in image_info_list:
-        extract_image(int(image_info[0]), image_info[1], args.boot_img,
+        extract_image(image_info[0], image_info[1], args.boot_img,
                       os.path.join(args.out, image_info[2]))
 def parse_cmdline():
     # parse command line arguments
