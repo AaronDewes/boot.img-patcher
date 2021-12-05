@@ -8,7 +8,7 @@
 | Tolino Vision 6 | Product: `tolino vision 6`<br>Manufacturer: `Rakuten Kobo Inc.`<br>`idVendor=4173`, `idProduct=8000` | Product: `USB Developer`<br/>Manufacturer: `Android Bootloader Interface`<br/>`idVendor=1f3a, idProduct=1010` |
 
 
-## Android 8 based Tolino Vision 6
+## Android 8.1 based Tolino Vision 6
 | FW Version Number | Download URL                                                 |
 | ----------------- | ------------------------------------------------------------ |
 | 15.0.0            | no official link found yet                                   |
