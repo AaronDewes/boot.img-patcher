@@ -15,7 +15,7 @@
 | 15.1.0            | https://download.pageplace.de/ereader/15.1.0/v6/update.zip |
 | 15.2.0            | https://download.pageplace.de/ereader/15.2.0/OS81/update.zip |
 
-## Tolino Firmwares Vision 5
+## Android 4.4 based Tolinos (Page 1 & 2, Vision 1-5, Shine 2 & 3, Epos 1 & 2)
 | FW Version Number | Download URL                                                 |
 | ----------------- | ------------------------------------------------------------ |
 | 12.2.0            | [Update from 10.x and older](https://download.pageplace.de/ereader/12-2-0/update.zip) [Update from 11.x](https://download.pageplace.de/ereader/12.2.0/update.zip) |
