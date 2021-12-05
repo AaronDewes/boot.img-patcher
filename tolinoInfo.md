@@ -8,9 +8,17 @@
 | Tolino Vision 6 | Product: `tolino vision 6`<br>Manufacturer: `Rakuten Kobo Inc.`<br>`idVendor=4173`, `idProduct=8000` | Product: `USB Developer`<br/>Manufacturer: `Android Bootloader Interface`<br/>`idVendor=1f3a, idProduct=1010` |
 
 
-## 
+## Tolino Firmwares Vision 6
 | FW Version Number | Download URL                                                 |
 | ----------------- | ------------------------------------------------------------ |
 | 15.0.0            | no official link found yet                                   |
 | 15.1.0            | https://download.pageplace.de/ereader/15.1.0/v6/update.zip |
 | 15.2.0            | https://download.pageplace.de/ereader/15.2.0/OS81/update.zip |
+
+## Tolino Firmwares Vision 5
+| FW Version Number | Download URL                                                 |
+| ----------------- | ------------------------------------------------------------ |
+| 15.0.0            | |
+| 15.1.0            |  |
+| 15.2.0            | https://download.pageplace.de/ereader/15.2.0/OS44/update.zip |
+
