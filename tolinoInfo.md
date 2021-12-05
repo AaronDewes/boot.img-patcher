@@ -12,5 +12,5 @@
 | FW Version Number | Download URL                                                 |
 | ----------------- | ------------------------------------------------------------ |
 | 15.0.0            | no official link found yet                                   |
-| 15.1.0            | https://tolinodownload-a.akamaihd.net/ereader/15.1.0/v6/update.zip |
+| 15.1.0            | https://download.pageplace.de/ereader/15.1.0/v6/update.zip |
 | 15.2.0            | https://download.pageplace.de/ereader/15.2.0/OS81/update.zip |
