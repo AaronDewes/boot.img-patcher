@@ -18,6 +18,7 @@ rm -rf work-v6/update work-v6/boot-15.2.0
 # Extract only the boot.img from the update.zip
 echo "Extracting boot.img from update.zip..."
 unzip -j work-v6/update.zip boot.img -d work-v6/update
+sha256sum work-v6/update/boot.img
 echo "Extracting ramdisk from boot.img..."
 ./unpack_bootimg.py --boot_img work-v6/update/boot.img --out work-v6/boot-15.2.0 
 echo "Unpacking ramdisk..."
@@ -33,6 +34,7 @@ cat ../../../patched/default-v6.prop > default.prop
 echo "Repacking ramdisk..."
 find . | cpio -o -H newc | gzip > ../repack-ramdisk
 cd ..
+md5sum ramdisk repack-ramdisk
 rm -rf ramdisk-unpacked
 rm -rf ramdisk
 mv repack-ramdisk ramdisk
@@ -41,10 +43,11 @@ echo "Creating new boot.img..."
 cd ..
 cd ..
 ./mkbootimg_V6.py --kernel work-v6/boot-15.2.0/kernel --ramdisk work-v6/boot-15.2.0/ramdisk \
-  --cmdline "selinux=1 androidboot.selinux=permissive buildvariant=user"\
+  --cmdline "selinux=1 androidboot.selinux=permissive buildvariant=userdebug"\
   --kernel_offset 0x30008000 --ramdisk_offset 0x32000000\
   --second_offset 0x30f00000 --tags_offset 0x30000100\
-  --os_patch_level 268697895\
+  --os_patch_level "2018-07-07" \
+  --os_version 8.1.0 \
   -o work-v6/boot-15.2.0-patched.img
 
 # Now, wait for the user to press enter
@@ -52,4 +55,5 @@ echo
 echo "Preparations done!"
 echo "Please now boot your tolino into recovery mode by holding the power button until the screen refreshes and shows the Tolino logo."
 echo "This can take up to 1 minute."
+
 fastboot boot work-v6/boot-15.2.0-patched.img
