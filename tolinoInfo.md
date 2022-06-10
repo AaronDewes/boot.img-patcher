@@ -15,6 +15,7 @@
 | 15.1.0            | https://download.pageplace.de/ereader/15.1.0/v6/update.zip |
 | 15.2.0            | https://download.pageplace.de/ereader/15.2.0/OS81/update.zip |
 | 15.2.6            | https://download.pageplace.de/ereader/15.2.6/OS81/update.zip |
+| 15.3.0            | https://download.pageplace.de/ereader/15.3.0/OS81/update.zip |
 
 ## Android 4.4 based Tolinos (Page 1 & 2, Vision 1-5, Shine 2 & 3, Epos 1 & 2)
 | FW Version Number | Download URL                                                 |
@@ -24,4 +25,5 @@
 | 15.0.0            | Only available on the Tolino Vision 6 |
 | 15.1.0            | Only available on the Tolino Vision 6 |
 | 15.2.0            | https://download.pageplace.de/ereader/15.2.0/OS44/update.zip |
+| 15.2.0            | https://download.pageplace.de/ereader/15.3.0/OS44/update.zip |
 
