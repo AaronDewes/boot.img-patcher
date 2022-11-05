@@ -11,9 +11,9 @@ adb pull /data/data/de.telekom.epub/shared_prefs/ePub.xml
 sed -i '/DEBUG/d' ePub.xml
 # The file should end with </map>
 # Before that line, insert these two lines:
-#  <string name="de.telekom.epub.PREFS_DEBUG_DIALOG_LAST_OPEN_CODE">c5af5651b57b1db0fe9f373e95cd4042997ccfb7bd2c5fa0b0b45ebc7717d83a9b71fb695e22478c1d4e9dd3d85330e3d385c5c49a892972484e45d5533532c6</string>
+#  <string name="de.telekom.epub.DEBUG_DIALOG_LAST_OPEN_CODE">d820afedd912b83340429595ad855b893815bb85661b2b50e0892f7b3d720e6c8ebad365623f8896ba946957c1ff70a3fcf51a2127041804fb17c46c671c37c0</string>
 #  <boolean name="de.telekom.epub.PREFS_DEBUG_DIALOG_QUICK_ACCESS" value="true" />
-sed -i 's/<\/map>/    <string name="de.telekom.epub.PREFS_DEBUG_DIALOG_LAST_OPEN_CODE">c5af5651b57b1db0fe9f373e95cd4042997ccfb7bd2c5fa0b0b45ebc7717d83a9b71fb695e22478c1d4e9dd3d85330e3d385c5c49a892972484e45d5533532c6<\/string>\n    <boolean name="de.telekom.epub.PREFS_DEBUG_DIALOG_QUICK_ACCESS" value="true" \/>\n<\/map>/' ePub.xml
+sed -i 's/<\/map>/    <string name="de.telekom.epub.DEBUG_DIALOG_LAST_OPEN_CODE">d820afedd912b83340429595ad855b893815bb85661b2b50e0892f7b3d720e6c8ebad365623f8896ba946957c1ff70a3fcf51a2127041804fb17c46c671c37c0<\/string>\n    <boolean name="de.telekom.epub.PREFS_DEBUG_DIALOG_QUICK_ACCESS" value="true" \/>\n<\/map>/' ePub.xml
 # Push the modified file to the device
 adb push ePub.xml /data/data/de.telekom.epub/shared_prefs/ePub.xml
 # Restart the app
